@@ -1,0 +1,41 @@
+.custom-cursor {
+  width: 30px;
+  height: 30px;
+  background-color: rgba(139, 92, 246, 0.15);
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  transform: translate(-50%, -50%);
+  backdrop-filter: blur(0.4px);
+}
+
+.custom-cursor-dot {
+  width: 4px;
+  height: 4px;
+  background-color: var(--accent);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 10000;
+  transition: transform 0.15s ease;
+  transform: translate(-50%, -50%);
+}
+
+/* Hide custom cursor on mobile/tablet */
+@media (max-width: 768px) {
+  .custom-cursor,
+  .custom-cursor-dot {
+    display: none;
+  }
+}
+
+/* Hide on touch devices */
+@media (pointer: coarse) {
+  .custom-cursor,
+  .custom-cursor-dot {
+    display: none;
+  }
+}

@@ -1,0 +1,330 @@
+.tools-process-section {
+  padding: 40px 0;
+  position: relative;
+  overflow: hidden; 
+}
+
+/* Animated Background */
+.tools-process-section::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.03) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+  pointer-events: none;
+}
+.space {
+  height: 40px;
+}
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.section-title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  color: var(--gray-light);
+  font-size: 1.1rem;
+}
+
+/* TWO COLUMN LAYOUT - Tools (Left) + Process (Right) */
+.two-column-wrapper {
+  display: flex;
+  gap: 2rem;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* LEFT COLUMN - TOOLS (2 column grid) */
+.tools-column {
+  flex: 0.6;
+}
+
+.tools-grid-center {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.tool-card-center {
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.8) 0%, rgba(20, 20, 20, 0.8) 100%);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 1.2rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  text-align: center;
+}
+
+.tool-card-center:hover {
+  border-color: rgba(139, 92, 246, 0.4);
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.15);
+  transform: translateY(-5px);
+}
+
+.tool-header-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.tool-icon-center {
+  width: 70px;
+  height: 70px;
+  border: 2px solid;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  margin: 0 auto;
+}
+
+.tool-card-center:hover .tool-icon-center {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
+}
+
+.tool-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.tool-name-center {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--secondary);
+  margin: 0;
+}
+
+/* RIGHT COLUMN - PROCESS */
+.process-column {
+  flex: 1;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(139, 92, 246, 0.02) 100%);
+  border-radius: 30px;
+  padding: 2rem;
+  border: 1px solid rgba(139, 92, 246, 0.1);
+}
+
+.process-column-title {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--accent);
+}
+
+/* Process Journey - 2 column grid */
+.journey-track {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.journey-node {
+  width: 100%;
+}
+
+.node-card {
+  background: rgba(26, 26, 26, 0.6);
+  backdrop-filter: blur(5px);
+  border-radius: 20px;
+  padding: 1rem;
+  height: 100%;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(139, 92, 246, 0.1);
+}
+
+.journey-node:hover .node-card {
+  background: rgba(26, 26, 26, 0.8);
+  transform: translateY(-5px);
+  border-color: rgba(139, 92, 246, 0.3);
+}
+
+/* Header with number and title in same row */
+.node-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Number Circle - Purple background ONLY on the number */
+.node-number-circle {
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(135deg, var(--accent) 0%, #6D28D9 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.journey-node:hover .node-number-circle {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+}
+
+.node-number-circle span {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Title - No purple background, only purple text */
+.node-title-main {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 0;
+  flex: 1;
+}
+
+.node-desc-main {
+  font-size: 0.8rem;
+  color: var(--gray-light);
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.node-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.detail-tag {
+  font-size: 0.65rem;
+  padding: 3px 8px;
+  background: rgba(139, 92, 246, 0.15);
+  border-radius: 20px;
+  color: var(--gray-light);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .two-column-wrapper {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 1.5rem;
+  }
+  
+  .tools-column {
+    flex: 1;
+  }
+  
+  .tools-grid-center {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .section-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .tools-grid-center {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .tools-column, .process-column {
+    padding: 1.5rem;
+  }
+  
+  .process-column-title {
+    font-size: 1.5rem;
+  }
+  
+  .journey-track {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .node-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .tool-icon-center {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .tool-logo {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tools-grid-center {
+    grid-template-columns: 1fr;
+  }
+  
+  .tool-header-center {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .node-card {
+    padding: 0.8rem;
+  }
+  
+  .node-number-circle {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .node-number-circle span {
+    font-size: 1rem;
+  }
+  
+  .node-title-main {
+    font-size: 0.9rem;
+  }
+  
+  .node-desc-main {
+    font-size: 0.7rem;
+  }
+  
+  .tool-icon-center {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .tool-logo {
+    width: 30px;
+    height: 30px;
+  }
+}

@@ -1,0 +1,217 @@
+.footer {
+  background: #0a0a0a;
+  padding: 40px 0 20px;
+  margin-top: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Geometric Grid Pattern */
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(138, 92, 246, 0.080) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(138, 92, 246, 0.080) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+}
+
+@keyframes slideBackground {
+  from {
+    transform: translateX(0) translateY(0);
+  }
+  to {
+    transform: translateX(80px) translateY(80px);
+  }
+}
+
+/* Floating Geometric Shapes */
+.geometric-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Top Border Line */
+.footer .accent-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 2px;
+  background: var(--accent);
+  z-index: 1;
+}
+
+/* Content - Keep above background */
+.footer-content {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-headline {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.footer-cta {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-email-btn {
+  font-size: 1.1rem;
+  padding: 15px 40px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.footer-email-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  color: var(--secondary);
+  text-decoration: none;
+  transition: var(--transition);
+  font-size: 1rem;
+  padding: 2px 0;
+  position: relative;
+}
+
+.social-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: var(--transition);
+}
+
+.social-link:hover {
+  color: var(--accent);
+}
+
+.social-link:hover::after {
+  width: 100%;
+}
+
+.footer-bottom {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #222;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-bottom p {
+  color: #858585;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-heart {
+  display: inline-block;
+  animation: pulseHeart 1.5s ease infinite;
+}
+
+.footer-credit {
+  font-size: 0.75rem;
+}
+
+.back-to-top {
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 6px 6px;
+  font-size: 0.75rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 20px;
+}
+
+.back-to-top:hover {
+  background: var(--accent);
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+@keyframes pulseHeart {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Hide shapes on mobile for performance */
+@media (max-width: 768px) {
+  .footer {
+    padding: 60px 0 30px;
+  }
+  
+  .footer-headline {
+    font-size: 2rem;
+  }
+  
+  .footer-email-btn {
+    font-size: 0.9rem;
+    padding: 12px 25px;
+  }
+  
+  .footer-social {
+    gap: 1.5rem;
+  }
+  
+  .social-link {
+    font-size: 0.85rem;
+  }
+  
+  .shape-1, .shape-2, .shape-3, .shape-4, .shape-5 {
+    display: none;
+  }
+  
+  .footer::after {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-headline {
+    font-size: 1.5rem;
+  }
+  
+  .footer-social {
+    gap: 1rem;
+  }
+  
+  .social-link {
+    font-size: 0.75rem;
+  }
+}

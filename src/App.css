@@ -1,0 +1,172 @@
+﻿/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&display=swap');
+
+/* CSS Variables */
+:root {
+  --primary: #0B0B0C;
+  --secondary: #E7E5E4;
+  --accent: #8B5CF6;
+  --gray-light: #a8a8a8;
+  --gray-dark: #1a1a1a;
+  --transition: all 0.3s ease;
+  --transition-fast: all 0.2s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--primary);
+  color: var(--secondary);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Minimal spacing between sections */
+section {
+  padding: 20px 0;  /* Reduced from 100px to 20px */
+}
+
+/* Typography */
+h1, h2, h3, .heading-font {
+  font-family: 'Clash Display', sans-serif;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 5rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;  /* Reduced from 3rem */
+}
+
+.accent-text {
+  color: var(--accent);
+}
+
+/* Buttons */
+button {
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--secondary);
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: 'Inter', sans-serif;
+  border-radius: 4px;
+}
+
+button:hover {
+  background: var(--accent);
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  background: var(--secondary);
+  color: var(--primary);
+  border-color: var(--secondary);
+}
+
+.btn-secondary:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--secondary);
+}
+
+.btn-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* Grid Systems */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* Progress Bar */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent);
+  transform-origin: 0%;
+  z-index: 1000;
+}
+
+/* Remove default margin from last child */
+section:last-child {
+  padding-bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .grid-2, .grid-3 {
+    grid-template-columns: 1fr;
+  }
+  
+  h1 {
+    font-size: 3rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  section {
+    padding: 15px 0;
+  }
+  
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  .btn-group {
+    flex-direction: column;
+  }
+  
+  button {
+    width: 100%;
+  }
+  
+  section {
+    padding: 10px 0;
+  }
+}

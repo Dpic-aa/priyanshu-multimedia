@@ -1,0 +1,108 @@
+.services-section {
+  /* background: #0a0a0a; */
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.service-card {
+  background: var(--gray-dark);
+  padding: 2rem;
+  border-radius: 12px;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.service-card:hover {
+  background: #222222;
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.1);
+}
+
+.service-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 80px;
+}
+
+.service-icon img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+/* For emoji fallback */
+.service-icon span {
+  font-size: 3rem;
+}
+
+.service-icon img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  /* Make black vectors colorful */
+  filter: brightness(0) saturate(100%) invert(47%) sepia(98%) saturate(2000%) hue-rotate(220deg) brightness(100%) contrast(100%);
+  transition: all 0.3s ease;
+}
+
+/* On hover, make it glow */
+.service-card:hover .service-icon img {
+  filter: brightness(0) saturate(100%) invert(47%) sepia(98%) saturate(2000%) hue-rotate(220deg) brightness(120%) contrast(100%);
+  transform: scale(1.1);
+}
+
+.service-title {
+  margin-bottom: 1rem;
+  font-size: 1.35rem;
+}
+
+.service-description {
+  color: var(--gray-light);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.service-price {
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.service-btn {
+  background: transparent;
+  border: 1px solid var(--accent);
+  padding: 8px 20px;
+  font-size: 0.85rem;
+  width: auto;
+}
+
+.service-btn:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .service-card {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
